@@ -1,15 +1,33 @@
-import Mihawk from 'images/mihawk.jpg'
+import About from './pages/About'
+import Collections from './pages/Collections'
+import Home from './pages/Home'
+import Details from './pages/Details'
 
-console.log(Mihawk)
+class App {
+  constructor() {
+    this.createContent()
+    this.createPages()
+  }
 
-const test = () => {
-  console.log('test')
+createContent () {
+  this.content = document.querySelector('.content')
+  this.template = this.content.getAttribute('data-template')
+
 }
 
-test()
 
-window.setTimeout(() => {
-  console.log('test')
-}, 2000)
+createPages() {
+  this.pages = {
+    about: new About(),
+    collections: new Collections(),
+    details: new Details(),
+    home: new Home()
+  }
 
-console.log('test')
+  this.page = this.pages[this.template]
+  this.page.create()
+
+  console.log(this.page)
+}}
+
+new App()
