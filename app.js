@@ -8,7 +8,7 @@ const methodOverride = require('method-override')
 
 const path = require('path')
 const app = express()
-const port = 3001
+const port = 3000
 
 app.use(logger('dev'))
 app.use(bodyParser.json())
@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 const Prismic = require('@prismicio/client')
 const PrismicDOM = require('prismic-dom')
+
 
 // Initialize the prismic.io api
 const initApi = req => {

@@ -3,10 +3,6 @@
   color: $color-bright-gray;
 }
 
-.about__wrapper {
-
-}
-
 .about__title {
   @extend %title-100;
 
@@ -14,7 +10,7 @@
   max-width: 125rem;
   text-align: center;
 
-  @include media('<phone') {
+  @include media("<phone") {
     max-width: 67.7rem;
   }
 }
